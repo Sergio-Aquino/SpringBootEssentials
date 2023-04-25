@@ -29,6 +29,14 @@ public class AnimeController {
     @GetMapping("/list")
     public List<Anime> list() {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-        return List.of(new Anime("Dragon Ball Z"), new Anime("Naruto"));
+        return List.of(new Anime("Dragon Ball GT"), new Anime("Naruto"));
+    }
+
+    @GetMapping("/list2")
+    public List<Anime> list2() {
+        log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return List.of(new Anime("Dragon Ball GT"), new Anime("Naruto"), new Anime("Boruto"));
     }
 }
+
+//Adiocando o Hot Swap, não é necessário reiniciar a aplicação sempre que um método é adicionado ou alterado
