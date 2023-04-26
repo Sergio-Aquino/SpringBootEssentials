@@ -12,3 +12,9 @@ public class ApplicationStart {
         SpringApplication.run(ApplicationStart.class, args);
     }
 }
+
+//No pacote controller, há apenas uma classe simples com todos os Endpoints.
+//No pacote domínio, há uma classe que representa o que há no banco de dados.
+//No pacote repository, há uma classe cujos métodos interagem com o banco de dados.
+//No pacote service, há uma classe com a lógica de negócio.
+
