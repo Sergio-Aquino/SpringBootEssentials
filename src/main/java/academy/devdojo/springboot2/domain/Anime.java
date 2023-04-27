@@ -2,6 +2,7 @@ package academy.devdojo.springboot2.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,9 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
+@Builder
 public class Anime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name;
     private Long id;
+    private String name;
 }
