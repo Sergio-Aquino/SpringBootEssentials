@@ -1,3 +1,14 @@
 server:
   error:
     include-stacktrace: never
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/AnimeDataBase?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: postgres
+    password: Aquino#123
+  jpa:
+    hibernate:
+      ddlAuto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
