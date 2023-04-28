@@ -1,6 +1,7 @@
 package academy.devdojo.springboot2.mapper;
 
 import academy.devdojo.springboot2.domain.Anime;
+import academy.devdojo.springboot2.domain.Anime.AnimeBuilder;
 import academy.devdojo.springboot2.requests.AnimePostRequestBody;
 import academy.devdojo.springboot2.requests.AnimePutRequestBody;
 import javax.annotation.processing.Generated;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-28T12:18:14-0300",
+    date = "2023-04-28T13:44:18-0300",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 @Component
@@ -20,11 +21,11 @@ public class AnimeMapperImpl extends AnimeMapper {
             return null;
         }
 
-        Anime anime = new Anime();
+        AnimeBuilder anime = Anime.builder();
 
-        anime.setName( animePostRequestBody.getName() );
+        anime.name( animePostRequestBody.getName() );
 
-        return anime;
+        return anime.build();
     }
 
     @Override
@@ -33,11 +34,11 @@ public class AnimeMapperImpl extends AnimeMapper {
             return null;
         }
 
-        Anime anime = new Anime();
+        AnimeBuilder anime = Anime.builder();
 
-        anime.setId( animePostRequestBody.getId() );
-        anime.setName( animePostRequestBody.getName() );
+        anime.id( animePostRequestBody.getId() );
+        anime.name( animePostRequestBody.getName() );
 
-        return anime;
+        return anime.build();
     }
 }
