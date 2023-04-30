@@ -12,16 +12,20 @@ import java.util.List;
 @Log4j2
 public class SpringClient {
     public static void main(String[] args) {
-        ResponseEntity<Anime> entity = new RestTemplate().getForEntity("http://localhost:8080/animes/{id}", Anime.class, 12);
+        ResponseEntity<Anime> entity = new RestTemplate().getForEntity("http://localhost:8080/animes/{id}",
+                Anime.class, 12);
         log.info(entity);
 
-        Anime object = new RestTemplate().getForObject("http://localhost:8080/animes/{id}", Anime.class, 12);
+        Anime object = new RestTemplate().getForObject("http://localhost:8080/animes/{id}",
+                Anime.class, 12);
         log.info(object);
 
         Anime[] animes = new RestTemplate().getForObject("http://localhost:8080/animes/all", Anime[].class);
         log.info(Arrays.toString(animes));
 
-        ResponseEntity<List<Anime>> exchange = new RestTemplate().exchange("http://localhost:8080/animes/all", HttpMethod.GET, null,
+        ResponseEntity<List<Anime>> exchange = new RestTemplate().exchange("http://localhost:8080/animes/all",
+                HttpMethod.GET,
+                null,
                 new ParameterizedTypeReference<>() {});
         log.info(exchange.getBody());
 
@@ -30,8 +34,27 @@ public class SpringClient {
 //        log.info("saved anime {}", kingdomSaved);
 
         Anime onePunchMan = Anime.builder().name("OnePunchMan").build();
-        ResponseEntity<Anime> onePunchManSaved = new RestTemplate().exchange("http://localhost:8080/animes", HttpMethod.POST, new HttpEntity<>(onePunchMan, createjsonHeader()), Anime.class);
+        ResponseEntity<Anime> onePunchManSaved = new RestTemplate().exchange("http://localhost:8080/animes",
+                HttpMethod.POST,
+                new HttpEntity<>(onePunchMan, createjsonHeader()),
+                Anime.class);
         log.info("saved anime {}", onePunchManSaved);
+
+        Anime animeToBeUpdated = onePunchManSaved.getBody();
+        animeToBeUpdated.setName("OnePunchMan 2");
+
+        ResponseEntity<Void> onePunchManUpdated = new RestTemplate().exchange("http://localhost:8080/animes",
+                HttpMethod.PUT,
+                new HttpEntity<>(animeToBeUpdated, createjsonHeader()),
+                Void.class);
+        log.info(onePunchManUpdated);
+
+        ResponseEntity<Void> onePunchManDeleted = new RestTemplate().exchange("http://localhost:8080/animes/{id}",
+                HttpMethod.DELETE,
+                null,
+                Void.class,
+                animeToBeUpdated.getId());
+        log.info(onePunchManDeleted);
     }
 
     private static HttpHeaders createjsonHeader() {
