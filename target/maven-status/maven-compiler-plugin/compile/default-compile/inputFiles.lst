@@ -1,0 +1,17 @@
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\requests\AnimePutRequestBody.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\ApplicationStart.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\repository\AnimeRepository.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\exception\ValidationExceptionDetails.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\mapper\AnimeMapper.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\exception\ExceptionDetails.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\handler\RestExceptionHandler.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\controller\AnimeController.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\exception\BadRequestException.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\service\AnimeService.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\wrapper\PageableResponse.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\client\SpringClient.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\requests\AnimePostRequestBody.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\domain\Anime.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\exception\BadRequestExceptionDetails.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\util\DateUtil.java
+C:\Users\sergi\IdeaProjects\SpringBootEssentials\src\main\java\academy\devdojo\springboot2\configurer\SergioWebMvcConfigurer.java

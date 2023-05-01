@@ -19,6 +19,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ import static org.springframework.http.HttpMethod.PUT;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureTestDatabase
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class AnimeControllerIT {
     @Autowired
     private TestRestTemplate testRestTemplate;
@@ -64,7 +66,7 @@ public class AnimeControllerIT {
                 new ParameterizedTypeReference<List<Anime>>() {
                 }).getBody();
 
-        Assertions.assertThat(animes).isNotNull()
+        Assertions.assertThat(animes)
                 .isNotNull()
                 .isNotEmpty()
                 .hasSize(1);
@@ -119,7 +121,9 @@ public class AnimeControllerIT {
     @DisplayName("save returns anime when successful")
     void save_ReturnsAnime_WhenSuccessful() {
         AnimePostRequestBody animePostRequestBody = AnimePostRequestBodyCreator.createAnimePostRequestBody();
+
         ResponseEntity<Anime> animeResponseEntity = testRestTemplate.postForEntity("/animes", animePostRequestBody,Anime.class);
+
         Assertions.assertThat(animeResponseEntity)
                 .isNotNull();
         Assertions.assertThat(animeResponseEntity.getStatusCode())
