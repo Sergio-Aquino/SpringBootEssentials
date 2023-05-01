@@ -26,8 +26,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/animes/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/animes/**").hasRole("USER")
+                        //.requestMatchers("/animes/admin/**").hasRole("ADMIN")
+                        //.requestMatchers("/animes/**").hasRole("USER")
                         .anyRequest()
                         .authenticated())
                 .formLogin().and().httpBasic(withDefaults());
