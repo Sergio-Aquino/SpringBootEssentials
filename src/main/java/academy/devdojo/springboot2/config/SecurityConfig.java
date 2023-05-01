@@ -20,14 +20,16 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @RequiredArgsConstructor
 @Log4j2
 public class SecurityConfig {
+    //private final UserService systemUserDetailsService;
+
     private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests((authz) -> authz
-                        //.requestMatchers("/animes/admin/**").hasRole("ADMIN")
-                        //.requestMatchers("/animes/**").hasRole("USER")
+                        .requestMatchers("/animes/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/animes/**").hasRole("USER")
                         .anyRequest()
                         .authenticated())
                 .formLogin().and().httpBasic(withDefaults());
@@ -44,7 +46,7 @@ public class SecurityConfig {
                 .build();
 
         UserDetails user = User.withUsername("sergio-user")
-                .password(encoder.encode("Kratos"))
+                .password(encoder.encode("kratos"))
                 .roles("USER")
                 .build();
 

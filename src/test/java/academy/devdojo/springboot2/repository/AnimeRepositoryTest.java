@@ -21,7 +21,7 @@ class AnimeRepositoryTest {
     private AnimeRepository animeRepository;
 
     @Test
-    @DisplayName("Save created anime when Successful")
+    @DisplayName("Save creates anime when Successful")
     public void save_PersistedAnime_WhenSuccessful() {
         Anime animeToBeSaved = createAnimeToBeSaved();
         Anime animeSaved = this.animeRepository.save(animeToBeSaved);
@@ -32,7 +32,7 @@ class AnimeRepositoryTest {
     }
 
     @Test
-    @DisplayName("Save updated anime when Successful")
+    @DisplayName("Save updates anime when Successful")
     void save_UpdatedAnime_WhenSuccessful() {
         Anime animeToBeSaved = createAnimeToBeSaved();
         Anime animeSaved = this.animeRepository.save(animeToBeSaved);
@@ -46,7 +46,7 @@ class AnimeRepositoryTest {
     }
 
     @Test
-    @DisplayName("Delete removed anime when Successful")
+    @DisplayName("Delete removes anime when Successful")
     void delete_RemovedAnime_WhenSuccessfull() {
         Anime animeToBeSaved = createAnimeToBeSaved();
         Anime animeSaved = this.animeRepository.save(animeToBeSaved);
@@ -80,7 +80,7 @@ class AnimeRepositoryTest {
     }
 
     @Test
-    @DisplayName("Save throw ConstraintViolationException when name is empty")
+    @DisplayName("Save throws ConstraintViolationException when name is empty")
     void save_ThrowConstraintViolationException_WhenNameIsEmpty() {
         Anime anime = new Anime();
 
